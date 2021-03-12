@@ -1,11 +1,12 @@
 from bottle import route, run
 import conf
+from api import beatmap
 
 
 
 @route('/d/<mapID>')
 def download(mapID):
-    return conf.getConf("key")
+    return "(WIP)"
 
 @route('/s/<setID>')
 def setInfo(setID):
@@ -13,6 +14,6 @@ def setInfo(setID):
 
 @route('/b/<mapID>')
 def beatmapInfo(mapID):
-    return mapID
+    return beatmap.getBeatmap(mapID)
 
-run(host='localhost', port=8080)
+run(host='0.0.0.0', port=8080)
